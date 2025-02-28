@@ -1,0 +1,9 @@
+# Ignorar la carpeta del workspace de Eclipse/STS
+.metadata/
+
+# Ignorar archivos innecesarios de Angular y Java
+node_modules/
+dist/
+target/
+.idea/
+.vscode/
