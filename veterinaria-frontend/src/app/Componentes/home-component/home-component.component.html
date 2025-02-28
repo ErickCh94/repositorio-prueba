@@ -1,0 +1,141 @@
+<!-- Carrusel ng-bootstrap -->
+@if (images) {
+    <ngb-carousel
+    #carousel
+	[interval]="3000"
+	[pauseOnHover]="pauseOnHover"
+	[pauseOnFocus]="pauseOnFocus"
+	(slide)="onSlide($event)"
+    >
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[0]" alt="Cuidado profesional para tus mascotas" />
+        </div>
+        <div class="carousel-caption">
+          <h3 class="text-white">Cuidado Profesional</h3>
+          <p class="text-white">Tu mascota en las mejores manos.</p>
+        </div>
+      </ng-template>
+  
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[1]" alt="Servicios de estética para mascotas" />
+        </div>
+        <div class="carousel-caption">
+          <h3 class="text-white">Estética y Bienestar</h3>
+          <p class="text-white">Baños, cortes y más para que luzcan increíbles.</p>
+        </div>
+      </ng-template>
+  
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[2]" alt="Cirugías seguras para mascotas" />
+        </div>
+        <div class="carousel-caption">
+          <h3 class="text-white">Procedimientos Medicos Seguros</h3>
+          <p class="text-white">Realizamos procedimientos con los más altos estándares.</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  }
+  
+  <div class="jumbotron jumbotron-fluid bg-light text-center py-5">
+    <div class="container">
+      <h1 class="display-4">🐾 Bienvenido a la Veterinaria Patitas 🐾</h1>
+      <p class="lead">En nuestra clínica, ofrecemos los mejores cuidados para tu mascota </p>
+      <p class="lead">Estamos aquí para garantizar su salud y bienestar.</p>
+      <hr class="my-4">
+      <p style="font-weight: bold;">¿Listo para agendar una cita? ¡Haz clic en el botón!</p>
+      <button class="btn btn-primary btn-lg" (click)="guardarCitas()">Registrar Cita</button>
+    </div>
+  </div>
+
+  <!-- Cartas de servicios de la vet-->
+  <div class="container my-5">
+    <h2 class="text-center mb-4">🐶🐱 Nuestros Servicios 🐱🐶</h2>
+    <div class="row">
+      <!-- Carta 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 card-rotating">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="https://www.animalshealth.es/fileuploads/news/perro-vacunacion-guia-mascota-veterinaria-216624624471.jpg" class="card-img-top" alt="Vacunación">
+            <div class="card-body">
+              <h5 class="card-title">Vacunación</h5>
+              <p class="card-text">Mantén a tu mascota protegida con nuestras vacunas de alta calidad.</p>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="card-body">
+              <h5 class="card-title">Servicios de Vacunación</h5>
+              <ul class="list-unstyled">
+                <li>Vacuna contra la rabia</li>
+                <li>Vacuna múltiple para perros</li>
+                <li>Vacuna múltiple para gatos</li>
+                <li>Desparasitación</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+  
+      <!-- Carta 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 card-rotating">
+            <div class="card-inner">
+          <div class="card-front">
+            <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/2147569900/images/6740fb-ef6d-b4c-4a1f-a4ad84887ad6_Poodle-Canis-familiaris-white.jpg" class="card-img-top" alt="Estética">
+            <div class="card-body">
+              <h5 class="card-title">Estética</h5>
+              <p class="card-text">Baños, cortes de pelo y más para que tu mascota luzca increíble.</p>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="card-body">
+              <h5 class="card-title">Servicios de Estética</h5>
+              <ul class="list-unstyled">
+                <li>Baño y secado profesional</li>
+                <li>Corte de pelo a medida</li>
+                <li>Limpieza de oídos y uñas</li>
+                <li>Aromaterapia para mascotas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+      </div>
+  
+      <!-- Carta 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 card-rotating">
+            <div class="card-inner">
+          <div class="card-front">
+            <img src="https://cdn.shopify.com/s/files/1/0848/7806/5955/files/female-veterinary-doctor-using-stethoscope-cute-scottish-straight-silver-chinchilla-cat.jpg?v=1702522138" class="card-img-top" alt="Chequeos Médicos">
+            <div class="card-body">
+              <h5 class="card-title">Chequeos Médicos</h5>
+              <p class="card-text">Revisiones completas para asegurar la salud y bienestar de tu mascota.</p>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="card-body">
+              <h5 class="card-title">Servicios de Medicos</h5>
+              <ul class="list-unstyled">
+                <li>Exámenes físicos completos</li>
+                <li>Análisis de sangre y orina</li>
+                <li>Radiografías y ecografías</li>
+                <li>Control de peso y dieta</li>
+                <li>Cirugias</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  </div>
+  
+  <!-- Pie de página -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">© 2025 Veterinaria Patitas. Todos los derechos reservados.</p>
+  </footer>

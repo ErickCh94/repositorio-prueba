@@ -1,0 +1,65 @@
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 123, 255, 0.1); /* Efecto hover suave */
+  transition: background-color 0.3s ease;
+}
+
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+  border-color: #117a8b;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.btn-eliminar {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-eliminar::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+}
+
+.btn-eliminar:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-content {
+  border: none;
+  border-radius: 10px;
+}
+
+.modal-header {
+  border-radius: 10px 10px 0 0;
+}
+
+.modal-footer {
+  border-radius: 0 0 10px 10px;
+}
+

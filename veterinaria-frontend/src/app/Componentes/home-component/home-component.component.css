@@ -1,0 +1,247 @@
+
+/* Estilos del carrusel */
+ngb-carousel {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .picsum-img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; 
+    overflow: hidden;
+  }
+  
+  .picsum-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center center;
+    transition: transform 0.5s ease;
+  }
+  
+  .picsum-img-wrapper:hover img {
+    transform: scale(1.1); 
+  }
+  
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0; 
+    animation: fadeIn 1.5s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to {
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+  
+  ngb-carousel .carousel-item.active .carousel-caption {
+    opacity: 0; 
+    animation: fadeIn 1.5s ease-in-out forwards; 
+  }
+  
+  .carousel-caption h3 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .carousel-caption p {
+    font-size: 1.2rem;
+  }
+  
+/* Estilos deel Jumbotron */
+.jumbotron {
+    border-radius: 10px; 
+    margin: 1rem auto; 
+    padding: 2rem 1rem; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    background-image: url('https://slidechef.net/wp-content/uploads/2023/12/Free-Cute-Dog-Background.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .jumbotron h1 {
+    font-size: 2.5rem; 
+    font-weight: bold; 
+    color: #333; 
+  }
+  
+  .jumbotron .lead {
+    font-size: 1.2rem; 
+    font-weight: bold;
+    color: #555; 
+  }
+  
+  .jumbotron .btn {
+    margin-top: 0.5rem; 
+    font-size: 1.1rem; 
+    font-weight: bold; 
+    padding: 0.75rem 2rem; 
+    border-radius: 30px; 
+    transition: all 0.3s ease; 
+    position: relative; 
+    overflow: hidden; 
+    border: 2px solid transparent; 
+  }
+  .jumbotron .btn:hover {
+    background-color: #0056b3; 
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .jumbotron .btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.3); 
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+  }
+  
+  .jumbotron .btn:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .jumbotron .btn:active {
+    transform: translateY(0); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
+  }
+
+
+  /* Estilos de las cartas */
+  .card-img-top {
+    height: 200px; 
+    object-fit: cover; 
+    object-position: center center;
+    width: 100%; 
+  }
+  
+  .card {
+    transition: transform 0.3s ease; 
+    border: 1px solid rgba(0, 0, 0, 0.125); 
+    border-radius: 10px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+
+  }
+  
+  .card:hover {
+    transform: scale(1.05); 
+  }
+  
+  .card-body {
+    padding: 1.5rem; 
+  }
+  
+  .card-title {
+    font-size: 1.25rem; 
+    font-weight: bold; 
+  }
+  
+  .card-text {
+    font-size: 1rem; 
+  }
+  
+  /* Rotacion */
+
+  @media (min-width: 768px) {
+    .col-md-4 {
+      flex: 0 0 auto; 
+      width: 33.33333333%;
+      height: 360px; /* Forzar altura!! o toma valor de 0 y nada se aprecia*/
+    }
+
+  .card-rotating {
+    perspective: 1000px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  }
+  
+.card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+  }
+  
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-front {
+    background-color: white;
+  }
+  
+  .card-back {
+    background-color: #f8f9fa;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    padding: 1.5rem;
+  }
+  
+ 
+  .card-rotating:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-body {
+    flex-grow: 1;
+    overflow: hidden;
+  }
+  
+
+  .card-back .card-body {
+    padding: 1.5rem;
+    text-align: center; 
+    width: 100%;
+  }
+  
+  .card-back .card-title {
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    margin-bottom: 1.5rem;
+    color: #333; 
+  }
+  
+  .card-back ul {
+    list-style-type: disc; 
+    padding-left: 1.5rem; 
+    text-align: left; 
+    margin-bottom: 0; 
+  }
+  
+  .card-back ul li {
+    font-size: 1rem; 
+    margin-bottom: 0.75rem; 
+    color: #555; 
+    line-height: 1.5; 
+  }
+
