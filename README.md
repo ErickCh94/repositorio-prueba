@@ -95,26 +95,32 @@ Verificar que MongoDB esta en ejecución:
 	
 5. **Verificar que el backend esta en ejecución**
    
-	- Ya sea en http://localhost:8080 o probando los siguientes endpoints en Postman:
-	
-           GET: http://localhost:8080/citas/listar
+	- Se puede verificar que todo esta en orden probando los endpoints en Postman:
+	- IMPORTANTE: Una vez configurada la conexion con MongoDB de manera exitosa, realizar una peticion POST al siguiente Endpoint con el siguiente contenido en el cuerpo de la solicitud para que MongoDB cree automáticamente la base de datos y la colección necesaria.
+
+ 			POST: http://localhost:8080/citas/guardar
+
+   			Ejemplo del cuerpo de la solicitud:
+			{
+				"id": "1a2b3c4d5e",
+				"nombreCliente": "Pedro",
+				"nombreMascota": "Dino",
+				"razonCita": "Vacuna",
+				"fechaHora": "2025-02-26T10:30:00"
+			}
+   
+	- Estos son los otros endpoints de la app
+						
+			 GET: http://localhost:8080/citas/listar
+              	 	
+        	GET: http://localhost:8080/citas/buscar/{id}
               	
-           POST: http://localhost:8080/citas/guardar
-              		Ejemplo de cuerpo de la solicitud:
-              			{
-              				"nombreCliente": "Pedro",
-              				"nombreMascota": "Dino",
-              				"razonCita": "Vacuna",
-              				"fechaHora": "2025-02-26T10:30:00"
-              			}
-              	
-           GET: http://localhost:8080/citas/buscar/{id}
-              	
-          POST: http://localhost:8080/citas/eliminar 
+        	POST: http://localhost:8080/citas/eliminar 
               		Ejemplo de cuerpo de la solicitud:
               		{
               		  "id": "67c0d4fa22a90b1418dbb876"
               		}
+ 	
 ## Iniciar el Frontend
 	
     cd veterinaria-frontend
