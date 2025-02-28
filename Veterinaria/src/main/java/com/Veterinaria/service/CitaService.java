@@ -17,11 +17,6 @@ public class CitaService {
 	@Autowired
 	private CitaRepository citaRepository;
 
-    public List<Cita> listarCitas2() {
-    	System.out.println("Citas en la BD: " + citaRepository.findAll());
-        return citaRepository.findAll();
-    }
-    
 	public Respuesta listarCitas() {
 		Respuesta rs = new Respuesta();
 		if(citaRepository.findAll().isEmpty()) {
@@ -67,11 +62,6 @@ public class CitaService {
 		return rs;
 	}
 
-	
-    public Optional<Cita> obtenerCitaPorId2(String id) {
-        return citaRepository.findById(id);
-    }
-
 	public ResponseEntity<Cita> obtenerCitaPorId(String idCita){
 		Cita cita = citaRepository.findById(idCita).orElse(null);
 		if (cita == null) {
@@ -80,16 +70,12 @@ public class CitaService {
 			return ResponseEntity.status(HttpStatus.OK).body(cita);
 	}
     
-    public void eliminarCita2(String id) {
-        citaRepository.deleteById(id);
-    }
-    
-	public Respuesta eliminarCita(Cita cita) {   //ESTA NO ES LA DE MENOR JERARQUIA. HABRA QUE ELIMINAR RELACIONES CON LAS OTRAS TABLAS Y MS
+	public Respuesta eliminarCita(Cita cita) {   
 		Respuesta rs = new Respuesta();
 		if(citaRepository.existsById(cita.getId())) {
 			
         	cita = citaRepository.findById(cita.getId()).orElse(null);        	
-        	rs.setObj(new Cita(cita.getId(),cita.getNombreCliente(),cita.getNombreMascota(),cita.getRazonCita(), cita.getFechaHora()));  	//mbw
+        	rs.setObj(new Cita(cita.getId(),cita.getNombreCliente(),cita.getNombreMascota(),cita.getRazonCita(), cita.getFechaHora()));  
         	citaRepository.delete(cita);
 			rs.setMensaje("Cita eliminada");
 			rs.setSuccess(true);
