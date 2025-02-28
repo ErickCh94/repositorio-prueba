@@ -3,7 +3,6 @@ import { CitaServiceService } from '../../Servicios/cita-service.service';
 import { Router } from '@angular/router';
 import { Cita } from '../../Models/Cita';
 import { Respuesta } from '../../Models/Respuesta';
-import { log } from 'console';
 
 @Component({
   selector: 'app-citas-lista-component',
