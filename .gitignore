@@ -3,7 +3,3 @@
 
 # Ignorar archivos innecesarios de Angular y Java
 node_modules/
-dist/
-target/
-.idea/
-.vscode/
