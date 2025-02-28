@@ -17,10 +17,12 @@ Este proyecto es un sistema de gestión de citas para una veterinaria. Está des
 ## Instalaciónes y Configuraciones
 
 1. Clona el repositorio:
-   https://github.com/ErickCh94/repositorio-prueba
+   
+		git clone https://github.com/ErickCh94/repositorio-prueba
 		
-   Usar especificamente la branch: erick
-   https://github.com/ErickCh94/repositorio-prueba/tree/erick
+   Ya sea de la branch main o la branch erick
+   
+   		https://github.com/ErickCh94/repositorio-prueba/tree/erick
    
 2.-Instala dependencias del Frontend
 
